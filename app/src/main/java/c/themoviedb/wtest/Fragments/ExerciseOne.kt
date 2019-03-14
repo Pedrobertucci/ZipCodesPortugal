@@ -1,0 +1,18 @@
+package c.themoviedb.wtest.Fragments
+
+import android.os.Bundle
+import android.support.v4.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import c.themoviedb.wtest.R
+
+class ExerciseOne : Fragment() {
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
+        inflater.inflate(R.layout.exercises1, container, false)
+
+    companion object {
+        fun newInstance(): ExerciseOne = ExerciseOne()
+    }
+}

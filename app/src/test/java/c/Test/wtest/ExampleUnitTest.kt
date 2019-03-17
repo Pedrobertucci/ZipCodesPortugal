@@ -1,4 +1,4 @@
-package c.themoviedb.wtest
+package c.Test.wtest
 
 import org.junit.Test
 

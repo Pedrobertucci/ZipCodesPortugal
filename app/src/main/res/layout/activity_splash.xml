@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Activity.SplashActivity">
+
+    <ImageView
+            android:src="@drawable/portugal_splash"
+            android:layout_width="250dp"
+            android:layout_height="250dp" android:id="@+id/imageView"
+            android:layout_alignParentTop="false" android:layout_alignParentRight="false"
+            android:layout_alignParentEnd="false" android:layout_alignWithParentIfMissing="false"
+            android:layout_alignParentStart="false" android:layout_centerInParent="true"
+    />
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/txtStatus" android:layout_below="@+id/imageView"
+            android:layout_centerHorizontal="true" android:textSize="18sp" android:layout_marginTop="10dp"/>
+
+    <ProgressBar
+            style="@style/styleDialogProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtStatus"
+            android:layout_centerInParent="true"
+            android:id="@+id/progressSplash" android:indeterminate="true" android:layout_marginTop="10dp"/>
+    <Button
+            android:text="@string/starting_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/btnDownload"
+            android:layout_below="@+id/progressSplash"
+            android:layout_centerHorizontal="true" android:layout_marginTop="10dp" android:visibility="gone"/>
+
+</RelativeLayout>

@@ -15,8 +15,10 @@
                 android:id="@+id/edtSearch" android:padding="20dp" android:inputType="text"/>
     </android.support.v7.widget.CardView>
     <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView"
+            android:id="@+id/recyclerViewZipCodes"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical" android:layout_below="@+id/cardSearch" android:layout_margin="5dp"/>
+
+
 </RelativeLayout>

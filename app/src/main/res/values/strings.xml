@@ -3,4 +3,15 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="download_zipcodes">Downloading Zip codes...</string>
+    <string name="status_downloading"> Downloading data...</string>
+    <string name="saving_information">Saving information! It can take time</string>
+    <string name="error_time_out">Error Download data</string>
+    <string name="starting_download">Start Download</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="exerciseOne">Exercise 1</string>
+    <string name="exerciseTwo">Exercise 2</string>
+    <string name="exerciseThree">Exercise 3</string>
+    <string name="exerciseFour">Exercise 4</string>
+
 </resources>

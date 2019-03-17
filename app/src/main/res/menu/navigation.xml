@@ -4,21 +4,21 @@
     <item
             android:id="@+id/exercise1"
             android:icon="@drawable/ic_home_black_24dp"
-            android:title="1" android:checked="true" android:checkable="true"/>
+            android:title="@string/exerciseOne" android:checked="true" android:checkable="true"/>
 
     <item
             android:id="@+id/exercise2"
             android:icon="@drawable/ic_home_black_24dp"
-            android:title="2"/>
+            android:title="@string/exerciseTwo"/>
 
     <item
             android:id="@+id/exercise3"
             android:icon="@drawable/ic_home_black_24dp"
-            android:title="3"/>
+            android:title="@string/exerciseThree"/>
 
     <item
             android:id="@+id/exercise4"
             android:icon="@drawable/ic_home_black_24dp"
-            android:title="4"/>
+            android:title="@string/exerciseFour"/>
 
 </menu>

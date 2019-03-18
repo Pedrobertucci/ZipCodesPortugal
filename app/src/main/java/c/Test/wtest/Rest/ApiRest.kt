@@ -1,6 +1,5 @@
 package c.Test.wtest.Rest
 
-import c.Test.wtest.ExerciseOne.ZipCodeContract
 import c.Test.wtest.models.Consts
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -20,10 +19,7 @@ class ApiRest {
             .client(okhttp)
             .build()
 
-
-    fun zipCodeService(): ZipCodeContract {
-        return retrofit.create(ZipCodeContract::class.java)
+    fun zipCodeService(): ApiContract {
+        return retrofit.create(ApiContract::class.java)
     }
-
-
 }

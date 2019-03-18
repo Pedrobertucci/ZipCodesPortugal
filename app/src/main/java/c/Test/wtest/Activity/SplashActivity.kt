@@ -16,23 +16,32 @@ import java.net.SocketTimeoutException
 import android.net.ConnectivityManager
 import android.content.Context
 import android.content.Intent
-
+import android.widget.TextView
 
 class SplashActivity : AppCompatActivity() {
     private var dbHandler: DatabaseHandler? = null
     private var validateSize: ArrayList<Zipcodes>?= null
+    private var returnForUpdateDB: Boolean = false
+    lateinit var txtStatus: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        dbHandler = DatabaseHandler(this)
+        initItems()
 
+        dbHandler = DatabaseHandler(this)
         validateSize = dbHandler!!.getFirstZipCodes()
 
         if(validateSize!!.size == 0) {
             startDownload()
+        } else {
+            startedActivity()
         }
-        
+    }
+
+    private fun initItems() {
+        txtStatus = findViewById(R.id.txtStatus)
+
         btnDownload.setOnClickListener {
             btnDownload.visibility = View.GONE
             startDownload()
@@ -41,7 +50,6 @@ class SplashActivity : AppCompatActivity() {
 
     private fun startDownload() {
         if(isOnline()) {
-            txtStatus.text = resources.getString(R.string.status_downloading)
             val call = ApiRest().zipCodeService().download()
 
             call.enqueue(object: Callback<List<Zipcodes>?> {
@@ -49,23 +57,19 @@ class SplashActivity : AppCompatActivity() {
                                         response: Response<List<Zipcodes>?>?) {
                     response?.let {
                         val zipCodes: List<Zipcodes>? = it.body()
-                        txtStatus.text = getString(R.string.saving_information)
-                        if (zipCodes != null) {
-                            dbHandler!!.addZipCode(zipCodes)
-                        }
-                        val intent = Intent(baseContext, MainActivity::class.java)
-                        startActivity(intent)
+                        if (zipCodes != null) returnForUpdateDB = dbHandler!!.addZipCodeWithTransactions(zipCodes)
+                        if(returnForUpdateDB) startedActivity()
                     }
                 }
 
                 override fun onFailure(call: Call<List<Zipcodes>?>?,
                                        t: Throwable?) {
                     t?.let {
+                        Log.e("onFailure error", t.message)
+                        dbHandler!!.clearZipCode()
                         if (t is SocketTimeoutException) {
-                            txtStatus.text = getString(R.string.error_time_out)
                             btnDownload.visibility = View.VISIBLE
                         }
-                        Log.e("onFailure error", t.message)
                     }
                 }
             })
@@ -76,5 +80,10 @@ class SplashActivity : AppCompatActivity() {
         val cm = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val netInfo = cm.activeNetworkInfo
         return netInfo != null && netInfo.isConnectedOrConnecting
+    }
+
+    private fun startedActivity() {
+        val intent = Intent(baseContext, MainActivity::class.java)
+        startActivity(intent)
     }
 }

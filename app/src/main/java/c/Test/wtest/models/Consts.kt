@@ -6,5 +6,6 @@ open class Consts: Application() {
 
     companion object {
         const val BASE_URL = "http://centraldedados.pt/"
+        const val TAG = "WTest"
     }
 }

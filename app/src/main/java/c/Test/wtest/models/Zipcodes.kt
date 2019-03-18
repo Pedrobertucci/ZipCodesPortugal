@@ -7,5 +7,7 @@ data class Zipcodes(
     @SerializedName("num_cod_postal") val code: String,
     @SerializedName("ext_cod_postal") val extCode: String,
     @SerializedName("nome_localidade") val nameLocate: String,
-    @SerializedName("nome_arteria") val title: String
+    @SerializedName("nome_arteria") val title: String,
+    @SerializedName("tipo_arteria") val type: String,
+    @SerializedName("porta") val port: String
 ) : Serializable

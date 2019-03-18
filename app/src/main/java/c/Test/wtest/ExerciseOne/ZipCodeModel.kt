@@ -2,7 +2,12 @@ package c.Test.wtest.ExerciseOne
 
 class ZipCodeModel {
 
-    fun getAllItems() {
+    internal interface onGetValues {
 
+        fun onGetItems()
+
+        fun onResult()
+
+        fun onSuccess()
     }
 }

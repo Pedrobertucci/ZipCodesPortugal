@@ -21,6 +21,6 @@ class ZipCodeAdapter (private val context: Context, private val zipCodeList: Arr
     }
 
     override fun onBindViewHolder(holder: ResultViewHolder, position: Int) {
-        holder.txtZipCode.text = zipCodeList[position].code +"-"+zipCodeList[position].extCode+", "+zipCodeList[position].title
+        holder.txtZipCode.text = zipCodeList[position].code+", "+zipCodeList[position].nameLocate
     }
 }

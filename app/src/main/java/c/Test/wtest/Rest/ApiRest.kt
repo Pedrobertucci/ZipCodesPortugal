@@ -1,5 +1,7 @@
 package c.Test.wtest.Rest
 
+import android.content.Context
+import android.net.ConnectivityManager
 import c.Test.wtest.models.Consts
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit

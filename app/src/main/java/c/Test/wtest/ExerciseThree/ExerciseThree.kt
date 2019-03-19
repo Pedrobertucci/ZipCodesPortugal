@@ -3,8 +3,11 @@ package c.Test.wtest.ExerciseThree
 import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.content.res.ResourcesCompat.getColor
+import android.support.v7.widget.CardView
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.support.v7.widget.Toolbar
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,11 +25,12 @@ class ExerciseThree: Fragment() {
                               savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.exercise3, container, false)
         recyclerView = rootView.findViewById(R.id.recyclerView3) as RecyclerView
-        initItems()
+
+        initItems(inflater.context)
         return rootView
     }
 
-    private fun initItems() {
+    private fun initItems(context: Context) {
         recyclerView.layoutManager = LinearLayoutManager(activity)
         recyclerView.adapter = ExerciseThreeAdapter(activity!!, 50)
     }

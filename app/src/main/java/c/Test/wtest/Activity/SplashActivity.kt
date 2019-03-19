@@ -30,7 +30,7 @@ class SplashActivity : AppCompatActivity() {
         initItems()
 
         dbHandler = DatabaseHandler(this)
-        validateSize = dbHandler!!.getFirstZipCodes()
+        validateSize = dbHandler!!.getOneZipCodes()
 
         if(validateSize!!.size == 0) {
             startDownload()

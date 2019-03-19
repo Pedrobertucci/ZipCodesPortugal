@@ -8,4 +8,5 @@ open class Consts: Application() {
         const val BASE_URL = "http://centraldedados.pt/"
         const val TAG = "WTest"
     }
+
 }

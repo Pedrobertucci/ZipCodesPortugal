@@ -122,6 +122,30 @@ class DatabaseHandler(context: Context) :
         return zipCodes
     }
 
+    fun getOneZipCodes(): ArrayList<Zipcodes>? {
+        var zipCodes: ArrayList<Zipcodes>?= ArrayList()
+        val db = readableDatabase
+        val selectALLQuery = "SELECT * FROM $TABLE_NAME ORDER BY $TITLE LIMIT 1"
+        val cursor = db.rawQuery(selectALLQuery, null)
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                do {
+                    val code = cursor.getString(cursor.getColumnIndex(CODE))
+                    val extCode = cursor.getString(cursor.getColumnIndex(EXT_CODE))
+                    val nameLocate = cursor.getString(cursor.getColumnIndex(NAME_LOCATE))
+                    val title =  cursor.getString(cursor.getColumnIndex(TITLE))
+                    val type = cursor.getString(cursor.getColumnIndex(TYPE))
+                    val port = cursor.getString(cursor.getColumnIndex(PORT))
+                    zipCodes!!.add(Zipcodes(code, extCode, nameLocate, title, type, port))
+
+                } while (cursor.moveToNext())
+            }
+        }
+        cursor.close()
+        db.close()
+        return zipCodes
+    }
+
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
 
     }

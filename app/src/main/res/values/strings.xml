@@ -1,15 +1,15 @@
 <resources>
-    <string name="app_name">WTest</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="app_name" translatable="false">WTest</string>
     <string name="download_zipCodes">Downloading Zip codes…</string>
-    <string name="status_downloading"> Downloading data and Saving Information!</string>
+    <string name="status_downloading">Downloading data and Saving Information!</string>
     <string name="error_time_out">Error Download data</string>
     <string name="starting_download">Restart Download</string>
-    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_splash" translatable="false">SplashActivity</string>
     <string name="exerciseOne">Exercise 1</string>
     <string name="exerciseTwo">Exercise 2</string>
     <string name="exerciseThree">Exercise 3</string>
     <string name="exerciseFour">Exercise 4</string>
+    <string name="search">Type to search...</string>
+    <string name="refresh">Refresh page</string>
+    <string name="error_connection">Connect to a network please!</string>
 </resources>

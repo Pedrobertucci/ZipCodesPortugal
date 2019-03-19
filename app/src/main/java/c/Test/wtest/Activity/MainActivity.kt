@@ -47,6 +47,7 @@ class MainActivity : AppCompatActivity() {
     private fun openFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.frame_layout, fragment)
+        transaction.setCustomAnimations( android.R.anim.fade_in, android.R.anim.fade_out )
         transaction.addToBackStack(null)
         transaction.commit()
     }

@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">WTest</string>
+    <string name="download_zipCodes">Baixando codigos postais</string>
+    <string name="status_downloading">Baixando dados e salvando…</string>
+    <string name="error_time_out">Erro em baixar os dados</string>
+    <string name="starting_download">Reiniciar Download</string>
+    <string name="exerciseOne">Exercício 1</string>
+    <string name="exerciseTwo">Exercício 2</string>
+    <string name="exerciseThree">Exercício 3</string>
+    <string name="exerciseFour">Exercício 4</string>
+    <string name="search">Digite para pesquisar…</string>
+    <string name="refresh">Atualizar a página</string>
+    <string name="error_connection">Conecte-se a uma rede por favor</string>
 </resources>

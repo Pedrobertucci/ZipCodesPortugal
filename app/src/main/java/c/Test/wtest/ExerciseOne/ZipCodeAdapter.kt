@@ -1,13 +1,12 @@
 package c.Test.wtest.ExerciseOne
 
-import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import c.Test.wtest.R
 import c.Test.wtest.models.Zipcodes
 
-class ZipCodeAdapter (private val context: Context, private val zipCodeList: ArrayList<Zipcodes>)
+class ZipCodeAdapter (private val zipCodeList: ArrayList<Zipcodes>)
     : RecyclerView.Adapter<ResultViewHolder> (){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ResultViewHolder {

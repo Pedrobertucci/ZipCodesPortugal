@@ -46,14 +46,16 @@ class ExerciseOne : Fragment() {
 
             override fun afterTextChanged(editable: Editable) {
                 if(!editable.isEmpty()) {
+                    txtSearch.visibility = View.GONE
                     zipCodes = dbHandler!!.searchZipCodes(editable.toString())
-                    recyclerViewZipCodes.adapter = ZipCodeAdapter(activity!!, zipCodes!!)
+                    recyclerViewZipCodes.adapter = ZipCodeAdapter(zipCodes!!)
                     recyclerViewZipCodes.adapter.notifyDataSetChanged()
                 } else {
                     if(zipCodes != null){
                         zipCodes!!.clear()
-                        recyclerViewZipCodes.adapter = ZipCodeAdapter(activity!!, zipCodes!!)
+                        recyclerViewZipCodes.adapter = ZipCodeAdapter(zipCodes!!)
                         recyclerViewZipCodes.adapter.notifyDataSetChanged()
+                        txtSearch.visibility = View.VISIBLE
                     }
                 }
             }

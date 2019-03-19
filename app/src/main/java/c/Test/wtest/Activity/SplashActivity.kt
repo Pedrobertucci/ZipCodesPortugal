@@ -29,14 +29,18 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
         initItems()
 
-        dbHandler = DatabaseHandler(this)
-        validateSize = dbHandler!!.getOneZipCodes()
+        validateSize = verifyDb()
 
         if(validateSize!!.size == 0) {
             startDownload()
         } else {
             startedActivity()
         }
+    }
+
+    private fun verifyDb(): ArrayList<Zipcodes>? {
+        dbHandler = DatabaseHandler(this)
+        return dbHandler!!.getOneZipCodes()
     }
 
     private fun initItems() {
